@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import random
 
 #repo url on github
-Repo="https://github.com/karankoder/FideX"
+Repo="https://github.com/jineshjain/FideX"
 
 #timestamp to start the first commit
 timestamp=1742835646
@@ -13,6 +13,7 @@ no_of_commits_not_to_change=0
 
 #path to the repo
 path="/Users/jineshjain/Desktop/FideX"
+
 def format_time(unix_timestamp):
     dt = datetime.fromtimestamp(unix_timestamp, tz=timezone.utc)
     return dt.isoformat()
@@ -23,7 +24,6 @@ def run_command(cmd):
     return result.stdout.strip()
 
 # Step 1: Get all commit hashes (oldest first)
-run_command("pwd")
 commit_hashes = run_command("git rev-list --reverse HEAD").split("\n")
 
 # Step 2: Iterate through commits and change timestamps
